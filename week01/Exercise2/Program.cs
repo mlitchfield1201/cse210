@@ -28,8 +28,16 @@ class Program
         {
             letterGrade = "F";
         }
+        if (gradePercentage < 90 && gradePercentage > 60 && gradePercentage % 10 >= 7)
+        {
+            letterGrade += "+";
+        }
+        else if (gradePercentage > 59 && gradePercentage % 10 <= 3)
+        {
+            letterGrade += "-";
+        }
         Console.WriteLine($"Your letter grade is: {letterGrade}");
-        if (letterGrade == "A" || letterGrade == "B" || letterGrade == "C")
+        if (gradePercentage >= 70)
         {
             Console.WriteLine("Congratulations! You passed the class.");
         }
