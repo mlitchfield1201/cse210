@@ -29,15 +29,26 @@ class Program
         double average = (double)sum / length;
         Console.WriteLine($"The average is: {average}");
         int max = numbers[0];
+        int min = numbers[0];
         foreach (int number in numbers)
         {
             if (number > max)
             {
                 max = number;
             }
+            if (number < min && number > 0)
+            {
+                min = number;
+            }
         }
         Console.WriteLine($"The largest number is: {max}");
-
+        Console.WriteLine($"The smallest positive number is: {min}");
+        Console.WriteLine("The sorted list is: ");
+        numbers.Sort();
+        foreach (int number in numbers)
+        {
+            Console.WriteLine(number);
+        }
 
     }
 }
