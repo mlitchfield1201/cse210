@@ -1,0 +1,3 @@
+2026-10-31: [] - Today has been a long day trying to figure out how to make this code work.
+2026-10-31: [no prompt] - This time it should say "no prompt"!!!
+2026-10-31: [What were you doing at 10:30am? At 6:30pm?] - The same thing: working on this program. But I've learned a lot doing it!!
