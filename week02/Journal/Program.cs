@@ -61,15 +61,15 @@ class Program
                 {
                     case "1":
                         Console.WriteLine();
-                        entry1.DisplayPrompts();
+                        entry1.DisplayEntries();
                         break;
                     case "2":
                         Console.WriteLine();
-                        entry1.AddPrompt();
+                        entry1.AddEntry();
                         break;
                     case "3":
                         Console.WriteLine();
-                        entry1.DeletePrompt();
+                        entry1.DeleteEntry();
                         break;
                     default:
                         Console.WriteLine();

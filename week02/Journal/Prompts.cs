@@ -9,24 +9,33 @@ public class Prompt
     public void Start()
     {
         promptsFile = "prompts.txt";
+
+        if (!File.Exists(promptsFile))
+        {
+            File.Create(promptsFile).Close();
+        }
+
         _prompts = new List<string>(File.ReadAllLines(promptsFile));
     }
 
     public void ChangeFile()
     {
-        Console.WriteLine("Enter a new prompt file name (or press Enter to keep prompts.txt):");
+        Console.Write("Enter a new prompt file name (or press Enter to keep prompts.txt): ");
         string fileChoice = Console.ReadLine();
 
-        if (!string.IsNullOrWhiteSpace(fileChoice))
+        if (string.IsNullOrWhiteSpace(fileChoice))
         {
-            promptsFile = fileChoice;
-
-            if (!File.Exists(promptsFile))
-            {
-                File.Create(promptsFile).Close();
-            }
-        _prompts = new List<string>(File.ReadAllLines(promptsFile));
+            return;
         }
+
+        promptsFile = fileChoice.Trim();
+
+        if (!File.Exists(promptsFile))
+        {
+            File.Create(promptsFile).Close();
+        }
+
+        _prompts = new List<string>(File.ReadAllLines(promptsFile));
     }
 
     public void DisplayPrompts()
